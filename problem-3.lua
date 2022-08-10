@@ -11,9 +11,9 @@ end
 
 for i=2,number/2 do
 	if number / i == number // i then
-		print(number/i)
 		if is_prime(number//i) then
-			print("","^ is a prime number")
+			print("result :", number/i)
+			return true
 		end
 	end
 end

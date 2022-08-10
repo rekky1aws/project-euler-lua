@@ -6,9 +6,9 @@ for i=1,999 do
 			if i*j > highest then
 				highest = i*j
 			end
-			print(i, "x", j, "=", i*j)
+			-- print(i, "x", j, "=", i*j)
 		end
 	end
 end
 
-print(highest)
+print("result :", highest)
