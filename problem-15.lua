@@ -1,1 +1,1 @@
-print("result :", 137846528820)
+print("result : ", 137846528820)
