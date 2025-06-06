@@ -22,4 +22,4 @@ Solving the problems on [Project Euler](https://projecteuler.net/) using Lua
 |    015 | :white_check_mark: |                                                                                     |
 |    016 | :white_check_mark: |                                                                                     |
 |    017 | :white_check_mark: | Doesn't provide the correct answer but it a most likely a typo that I couldn't find |
-|    018 |        WIP         |                                                                                     |
+|    018 | :white_check_mark: |                                                                                     |
