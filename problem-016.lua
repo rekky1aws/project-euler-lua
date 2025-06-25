@@ -9,3 +9,8 @@ for i=1,string.len(text) do
 end
 
 print(string.len(text))
+-- print(sum)
+
+-- Apparently the sum is not correct
+-- It seems there is the correct number of digits (since ceil(log(2¹⁰⁰⁰)) = 302)
+-- There might be an error when summing all the digits
