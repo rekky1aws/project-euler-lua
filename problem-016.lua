@@ -12,5 +12,5 @@ print(string.len(text))
 -- print(sum)
 
 -- Apparently the sum is not correct
--- It seems there is the correct number of digits (since ceil(log(2¹⁰⁰⁰)) = 302)
+-- It seems there is the correct number of digits (since ceil(log(2^1000)) = 302)
 -- There might be an error when summing all the digits
