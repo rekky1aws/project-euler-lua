@@ -45,6 +45,10 @@ function spell_number (nb)
 		"thousand"
 	}
 
+	if nb == 100 then
+		return "onehundred"
+	end
+
 	-- XXXXX__ 
 	if nb > 100 then
 		nb_div_100 = nb // 100
@@ -61,6 +65,7 @@ function spell_number (nb)
 			result = result .. words[nb_div_100]
 			result = result .. words_3[dec]
 		else
+			result = result .. "one"
 			result = result .. words_3[dec+1]
 		end
 
@@ -89,7 +94,14 @@ function spell_number (nb)
 	return result
 end
 
+
+final = ""
 for i=1,1000 do
 	spell = spell_number(i)
+	final = final .. spell
+
 	print(i, spell)
 end
+
+-- print(final)
+print("result :", string.len(final))
