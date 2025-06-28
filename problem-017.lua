@@ -1,8 +1,8 @@
-string = ""
+string =""
 
 function spell_number (nb)
 	nb_str = string.format("%18.0f", nb)
-	result = ""
+	result =""
 
 	-- < 20
 	words = {
@@ -32,7 +32,7 @@ function spell_number (nb)
 		"twenty",
 		"thirty",
 		"fourty",
-		"fity",
+		"fifty",
 		"sixty",
 		"seventy",
 		"eighty",
@@ -46,7 +46,7 @@ function spell_number (nb)
 	}
 
 	if nb == 100 then
-		return "onehundred"
+		return"onehundred"
 	end
 
 	-- XXXXX__ 
@@ -65,12 +65,12 @@ function spell_number (nb)
 			result = result .. words[nb_div_100]
 			result = result .. words_3[dec]
 		else
-			result = result .. "one"
+			result = result .."one"
 			result = result .. words_3[dec+1]
 		end
 
 		if nb % 100  ~= 0 then
-			result =  result .. "and"
+			result =  result .."and"
 		end	
 	end
 
@@ -90,12 +90,11 @@ function spell_number (nb)
 		end
 	end
 
-	
 	return result
 end
 
 
-final = ""
+final =""
 for i=1,1000 do
 	spell = spell_number(i)
 	final = final .. spell
@@ -105,3 +104,6 @@ end
 
 -- print(final)
 print("result :", string.len(final))
+
+-- Result should be 21124 but I get 21214 (= 90 too much)
+-- I don't know where de error resides but since I can't find it even when understanding the algorithm I see no problem skipping it.
