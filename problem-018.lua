@@ -28,4 +28,30 @@ function disp_pyr (pyramid)
 	end
 end
 
+function hghst_nb_pos (pyramid)
+	hghst_val = 0
+	hghst_i = 0
+	hghst_j = 0
+
+	for i=1,#(pyramid) do
+		for j=1,#(pyramid[i]) do
+			if pyramid[i][j] > hghst_val then
+				hghst_val = pyramid[i][j]
+				hghst_i = i
+				hghst_j = j
+			end
+		end
+	end
+
+	result = {hghst_i, hghst_j}
+
+	return result
+end
+
+function best_path (pyramid)
+
+end
+
 disp_pyr(pyramid)
+high_coords = hghst_nb_pos(pyramid)
+print(string.format("The highest value is %d at i=%d and j=%d", pyramid[high_coords[1]][high_coords[2]], high_coords[1], high_coords[2]))
