@@ -48,10 +48,31 @@ function hghst_nb_pos (pyramid)
 	return result
 end
 
-function best_path (pyramid)
+function path (pyramid, total, i, j)
+	-- end of the pyramid
+	if i == #(pyramid) then
+		return total
+	end
 
+	-- start of the pyramid
+	if #(pyramid[i]) == 1 then
+		total = pyramid[i][1]
+		total = total + path(pyramid, total, i+1, j)
+	end
+
+	if #(pyramid[i]) then
+		if pyramid[i][j] > pyramid[i][j] then
+			total = total + path(pyramid, total, i+1, j)
+		else
+			total = total + path(pyramid, total, i+1, j+1)
+		end
+	end 
 end
 
 disp_pyr(pyramid)
+
 high_coords = hghst_nb_pos(pyramid)
 print(string.format("The highest value is %d at i=%d and j=%d", pyramid[high_coords[1]][high_coords[2]], high_coords[1], high_coords[2]))
+
+result = path(pyramid, 0, 1, 1)
+print(pyramid)
