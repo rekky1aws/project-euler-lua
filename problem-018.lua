@@ -96,7 +96,7 @@ function path_sum (pathing, pyramid)
 	return result
 end
 
-disp_pyr(pyramid)
+-- disp_pyr(pyramid)
 
 --high_coords = hghst_nb_pos(pyramid)
 --print(string.format("The highest value is %d at i=%d and j=%d", pyramid[high_coords[1]][high_coords[2]], high_coords[1], high_coords[2]))
