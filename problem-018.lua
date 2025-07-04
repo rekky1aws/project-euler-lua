@@ -69,10 +69,44 @@ function path (pyramid, total, i, j)
 	end 
 end
 
+function dec_to_bin(num)
+    -- returns a table of bits, least significant first.
+    local t={} -- will contain the bits
+    while num>0 do
+        rest=math.fmod(num,2)
+        t[#t+1]=rest
+        num=(num-rest)/2
+    end
+    return t
+end
+
+function path_sum (pathing, pyramid)
+	result = 0
+	j = 1
+	result = result + pyramid[1][1]
+	for i=2,#(pyramid) do
+		if pathing[i-1] then
+			j = j + pathing[i-1]
+		end
+		-- print(j)
+		result = result + pyramid[i][j]
+	end
+	-- print("====")
+
+	return result
+end
+
 disp_pyr(pyramid)
 
-high_coords = hghst_nb_pos(pyramid)
-print(string.format("The highest value is %d at i=%d and j=%d", pyramid[high_coords[1]][high_coords[2]], high_coords[1], high_coords[2]))
+--high_coords = hghst_nb_pos(pyramid)
+--print(string.format("The highest value is %d at i=%d and j=%d", pyramid[high_coords[1]][high_coords[2]], high_coords[1], high_coords[2]))
 
-result = path(pyramid, 0, 1, 1)
-print(pyramid)
+max = 0
+for i=0,2^(#(pyramid)-1)-1 do
+	sum = path_sum(dec_to_bin(i), pyramid)
+	if sum > max then
+		max = sum
+	end
+end
+
+print("result :", max)
